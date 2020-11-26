@@ -14,14 +14,25 @@
 
 .anim2 {
   transform: translateY(-600px);
-  animation: 1.2s slideIn ease-in-out forwards 1s;
-  z-index: 10;
+  animation: 1.2s anim2 ease-in-out forwards 1s;
   opacity: 0;
 }
 
-@keyframes slideIn {
+@keyframes anim2 {
   100% {
     transform: translateY(0px);
     opacity: 1;
   }
+}
+
+/* --- Animation 3 --- */
+
+.anim3 {
+	animation-name: anim3;
+	animation-duration: 3s;
+}
+
+@keyframes anim3 {
+	from {opacity: 0%;}
+	to {opacity: 100%;}
 }
