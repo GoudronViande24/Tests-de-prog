@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="animatedbg.css"> <!-- Important: doit rester le premier <link> du document -->
+
+</head>
+
+<body>
+
+	<div style="font-size:25px;" title="Error 404">Error 404</div>
+
+	<div class="bg"></div>
+	<div class="bg bg2"></div>
+	<div class="bg bg3"></div>
+	<div class="content">
+	</div>
+
+	<div class="sign">
+		<span class="fast-flicker">t</span>
+		<span class="fast-flicker">oune
+		<span class="flicker">wor</span>k
+	</div>
+	<p class="center">
+	</p>
+
+	<button class="button" style="position: fixed; bottom: 0; right: 0;" onclick="flipFlop();">
+		Artivain Talent
+	</button>
+
+	<script>
+		var fichier = 0; // dit que par défaut c'est le fichier 1 (oui même si c'est écrit 0)
+
+		// Alterner entre les fichiers CSS
+		function flipFlop() {
+			if (fichier == 0) {
+				window.fichier = 1;
+				changeCSS("normal.css", 0);
+			} else if (fichier == 1) {
+				window.fichier = 0;
+				changeCSS("animatedbg.css", 0);				
+			} else {
+				window.fichier = 0;
+			}
+		}
+
+		// Changer les fichiers CSS
+		function changeCSS(cssFile, cssLinkIndex) {
+
+			var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+
+			var newlink = document.createElement("link");
+			newlink.setAttribute("rel", "stylesheet");
+			newlink.setAttribute("type", "text/css");
+			newlink.setAttribute("href", cssFile);
+
+			document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+		}
+	</script>
+
+</body>
+</html>
